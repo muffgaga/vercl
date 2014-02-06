@@ -1,0 +1,9 @@
+def build(bld):
+    for program in ['test-rt-sender', 'test-rt-loopback']:
+        bld(
+            target       = program,
+            features     = 'cxx cxxprogram',
+            source       = '%s.cc' % program,
+            use          = 'vercl',
+            cxxflags     = '-g -std=gnu++11',
+       )
